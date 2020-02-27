@@ -79,7 +79,7 @@ io.on('connection', function (socket) {
     console.log(`user connected: ${id}`);
     console.log(`number of users connected: ${io.engine.clientsCount}`);
     io.emit("at first connect", userCount)
-    socket.on('disconnect', function () {
+    socket.on('disconnect', function (userCount) {
         console.log('user disconnected');
         console.log(`number of users connected: ${io.engine.clientsCount}`);
         io.emit("disconnect", userCount)
