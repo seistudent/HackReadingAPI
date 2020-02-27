@@ -81,10 +81,12 @@ io.on('connection', function (socket) {
     io.emit("at first connect", userCount)
     socket.on('disconnect', function () {
         console.log('user disconnected');
+        console.log(`number of users connected: ${io.engine.clientsCount}`);
+        io.emit("disconnect", userCount)
     });
     socket.on("chat message", (msg) => {
         console.log(`${id}: ${msg}`);
-        io.emit("chat message", { id, msg }, userCount);
+        io.emit("chat message", { id, msg });
     });
 });
 
