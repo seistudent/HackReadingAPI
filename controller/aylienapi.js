@@ -3,8 +3,10 @@ const aylienapi = express.Router();
 const Notes = require('../models/notes.js');
 const AYLIENTextAPI = require('aylien_textapi');
 const textapi = new AYLIENTextAPI({
-    application_id: "eee59153",
-    application_key: "abe5c4e741d4ddcf02bef66c00141d73"
+    // application_id: "eee59153",
+    // application_key: "abe5c4e741d4ddcf02bef66c00141d73"
+    application_id: "f24556d9",
+    application_key: "aa24d65f11312c0bd3c9cbbc1a04eb16"
 });
 
 aylienapi.get('/summarize/:title/:text', (req, res) => {
